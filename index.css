@@ -6,6 +6,8 @@ html,body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #FFF7ED;
+    
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -22,7 +24,6 @@ a:hover {
 
 
 .nav {
-    background-color: #FFF7ED;
     height: 110px;
     display: flex;
     align-items: center;
@@ -281,3 +282,33 @@ a:hover {
     font-size: 1.5rem;
 }
 
+/* Host */
+
+.host-nav {
+    display: flex;
+}
+
+.host-nav a {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 500;
+    padding: 5px 20px;
+}
+
+.host-nav a:hover {
+    color: #161616;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Footer */
+
+footer{
+    height: 110px;
+    color: #AAA;
+    font-size: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #252525;
+}
