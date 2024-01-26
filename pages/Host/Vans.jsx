@@ -10,7 +10,7 @@ export default function Vans(){
     },[])
 
     const vanList = vans.map( van => (
-        <Link to={`/host/vans/${van.id}`} key={van.id}>
+        <Link to={van.id} key={van.id}>
             <div key={van.id}>
                 <img className="van-img" src={van.imageUrl} alt="" />
                 <div>
