@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {getVans} from "../../api"
 
 export default function Vans(){
     const [vans,setVans] = React.useState([]);
