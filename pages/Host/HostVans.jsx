@@ -1,14 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {getVans} from "../../api"
+import { Link, useLoaderData } from "react-router-dom";
+import { getHostVans } from "../../api"
+import { requireAuth } from "../../utils"
+
+export async function loader(){
+    await requireAuth()
+    return getHostVans()
+}
 
 export default function Vans(){
-    const [vans,setVans] = React.useState([]);
-    React.useEffect(()=>{
-        fetch("/api/host/vans")
-            .then(res=> res.json())
-            .then(data=>setVans(data.vans))
-    },[])
+    
+    const vans = useLoaderData();
 
     const vanList = vans.map( van => (
         <Link to={van.id} key={van.id}>
@@ -26,14 +28,9 @@ export default function Vans(){
         <div className="vanslist">
             <h1>Your Listed vans list</h1>
             <div className="vanslist--card">
-                { vans.length > 0 ? (
-                    <section>
-                        {vanList}
-                    </section>
-                ): (
-                    <h2>Loading</h2>
-                )
-            }
+                <section>
+                    {vanList}
+                </section>
             </div>
         </div>
         
