@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useSearchParams, useLoaderData } from "react-router-dom"
 import { getVans } from "../../api"
 
-export function loader (){
+export async function loader (){
     return getVans()
 }
 
