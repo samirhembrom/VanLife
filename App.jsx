@@ -66,11 +66,13 @@ export default function App() {
                 <Route 
                     path="vans" 
                     element={<VansD />} 
-                    loader={ loadHostVans }  />
+                    loader={ loadHostVans }
+                    errorElement={<Error/>}  />
                 <Route 
                     path="vans/:id" 
                     element={<VansDe/>} 
-                    loader={ loadHostVan }  >
+                    loader={ loadHostVan }
+                    errorElement={<Error/>}  >
                     <Route 
                         index 
                         element={<HostVanInfo />} 
