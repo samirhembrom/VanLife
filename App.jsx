@@ -11,7 +11,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans, {loader as loadVans} from "./pages/Vans/Vans"
 import VansDetails, {loader as loadVanDetail} from "./pages/Vans/VansDetails"
-import Dashboard from "./pages/Host/Dashboard"
+import Dashboard,{loader as dashboardLoader} from "./pages/Host/Dashboard"
 import Income from "./pages/Host/Income"
 import Layout from "./components/Layout"
 import Reviews from "./pages/Host/Reviews"
@@ -54,7 +54,7 @@ export default function App() {
                 <Route 
                     index 
                     element={<Dashboard />} 
-                    loader={async ({request})=> await requireAuth(request) } />
+                    loader={dashboardLoader } />
                 <Route 
                     path="income" 
                     element={<Income />} 
